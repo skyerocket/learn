@@ -2,17 +2,17 @@
 
 const http = require('http')
 
-http.createServer((req, res) => {
+http.createServer((request, response) => {
 	let body = []
-	req.on('error', err => {
+	request.on('error', err => {
 		console.error(err)
 	}).on('data', chunk => {
-		body.push(chunk.toString())
+		body.push(chunk)
 	}).on('end', () => {
 		body = Buffer.concat(body).toString()
 		console.log('body', body)
-		res.writeHead(200, {'Content-Type' : 'text/html'})
-		res.end('Hello World\n')
+		response.writeHead(200, {'Content-Type' : 'text/html'})
+		response.end(`Hello World`)
 	})
 }).listen(8088)
 
