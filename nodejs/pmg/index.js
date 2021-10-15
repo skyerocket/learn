@@ -25,7 +25,7 @@ const getAllSorted = async singers => {
     return data.sort(sortFunc);
 }
 
-// console.log(await getAllSorted(['ariana', 'taylor', 'billie', 'ed', 'shawn', 'dua', 'selena', 'camila', 'bruno', 'justin']))
+console.log(await getAllSorted(['ariana', 'taylor', 'billie', 'ed', 'shawn', 'dua', 'selena', 'camila', 'bruno', 'justin']))
 
 
 // TASK 2
